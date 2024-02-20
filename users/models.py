@@ -13,6 +13,10 @@ class Experience(models.Model):
     def __str__(self):
         return self.label
 
+
+
+
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     company_name = models.CharField(max_length=200, null=True, blank=True)
@@ -27,9 +31,6 @@ class UserProfile(models.Model):
     def __str__(self):
         return f"{self.user.username}'s Profile"
 
-
-
-
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
@@ -39,3 +40,13 @@ def create_user_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.userprofile.save()
+
+
+
+class Interest(models.Model):
+    label = models.TextField(max_length=400,blank=True,null=True)
+class UserInterest(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    Interest = models.ForeignKey(Interest,on_delete=models.CASCADE, blank=True, null=True)
+
+
