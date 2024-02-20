@@ -160,7 +160,7 @@ dmypy.json
 
 # pytype static type analyzer
 .pytype/
-
+research_writing_tool/research_writing_tool/settings.py
 # Cython debug symbols
 cython_debug/
 
