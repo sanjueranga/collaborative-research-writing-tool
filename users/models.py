@@ -14,16 +14,13 @@ class Experience(models.Model):
         return self.label
 
 
-
-
-
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     company_name = models.CharField(max_length=200, null=True, blank=True)
     profile_picture = models.URLField(max_length=100, blank=True, null=True)
     country = models.ForeignKey(Country, on_delete=models.SET_NULL, blank=True, null=True)
     job_title = models.CharField(max_length=100)
-    experience = models.ForeignKey(Experience, on_delete=models.CASCADE, blank=True, null=True)  # Changed "Experience" to "experience" to follow Python conventions
+    experience = models.ForeignKey(Experience, on_delete=models.SET_NULL, blank=True, null=True)  # Changed "Experience" to "experience" to follow Python conventions
     website = models.URLField(max_length=200)
     description = models.TextField(max_length=1000)
     total_score = models.IntegerField(default=0)
