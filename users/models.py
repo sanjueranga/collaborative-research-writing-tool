@@ -4,7 +4,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
         
 class Country(models.Model):
-    label = models.CharField(max_length=100)
+    label = models.CharField(max_length=100,unique=True)
     def __str__(self):
         return self.label
 
