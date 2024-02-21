@@ -23,7 +23,7 @@ class UserProfile(models.Model):
     experience = models.ForeignKey(Experience,on_delete=models.PROTECT, blank=False)  # Changed "Experience" to "experience" to follow Python conventions
     website = models.URLField(max_length=200,blank=True, null=True)
     description = models.TextField(max_length=1000)
-    total_score = models.IntegerField(default=0)
+    profile_score = models.IntegerField(default=0)
 
     def __str__(self):
         return f"{self.user.username}'s Profile"
