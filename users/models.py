@@ -9,7 +9,7 @@ class Country(models.Model):
         return self.label
 
 class Experience(models.Model):
-    label = models.CharFieldField(max_length=100, unique=True)
+    label = models.CharField(max_length=100, unique=True)
     def __str__(self):
         return self.label
 
