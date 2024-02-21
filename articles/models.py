@@ -26,7 +26,7 @@ class Article(models.Model):
 
 class ArticleComment(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
-    content = models.TextField(max_length = 500, blank = True,null=True)
+    content = models.CharField(max_length = 500, related_name='comments')
     article = models.ForeignKey(Article,on_delete=models.CASCADE)
     def __str__(self):
         return self.content
