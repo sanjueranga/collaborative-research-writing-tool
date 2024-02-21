@@ -17,7 +17,7 @@ class Article(models.Model):
     thumbnail = models.URLField(max_length=200)
     content = models.TextField()
     category = models.ForeignKey(Interest,on_delete=models.PROTECT)
-    summary = models.TextField(max_length=500,blank=True,null=True)
+    summary = models.CharField(max_length=250,blank=True,null=True)
     current_reviewer = models.ForeignKey(User,on_delete=models.PROTECT,related_name='articles_reviewing')
 
     def __str__(self):
