@@ -14,7 +14,7 @@ class Article(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)   
     published_date = models.DateTimeField(blank=True, null=True)
     title = models.CharField(max_length=100)
-    thumbnail_url = models.URLField(max_length=200)
+    thumbnail = models.URLField(max_length=200)
     content = models.TextField(max_length=20000,blank=True,null=True)
     category = models.ForeignKey(Interest,on_delete=models.SET_NULL,blank=True,null=True)
     summary = models.TextField(max_length=500,blank=True,null=True)
