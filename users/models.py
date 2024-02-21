@@ -21,7 +21,7 @@ class UserProfile(models.Model):
     country = models.ForeignKey(Country, on_delete=models.PROTECT, blank=False)
     job_title = models.CharField(max_length=100)
     experience = models.ForeignKey(Experience,on_delete=models.PROTECT, blank=False)  # Changed "Experience" to "experience" to follow Python conventions
-    website = models.URLField(max_length=200)
+    website = models.URLField(max_length=200,blank=True, null=True)
     description = models.TextField(max_length=1000)
     total_score = models.IntegerField(default=0)
 
