@@ -1,0 +1,26 @@
+[
+  { "model": "userprofile.country", "pk": 1, "fields": { "label": "United States" } },
+  { "model": "userprofile.country", "pk": 2, "fields": { "label": "Canada" } },
+  { "model": "userprofile.country", "pk": 3, "fields": { "label": "Mexico" } },
+  { "model": "userprofile.country", "pk": 4, "fields": { "label": "Brazil" } },
+  { "model": "userprofile.country", "pk": 5, "fields": { "label": "Argentina" } },
+  {
+    "model": "userprofile.country",
+    "pk": 6,
+    "fields": { "label": "United Kingdom" }
+  },
+  { "model": "userprofile.country", "pk": 7, "fields": { "label": "Germany" } },
+  { "model": "userprofile.country", "pk": 8, "fields": { "label": "France" } },
+  { "model": "userprofile.country", "pk": 9, "fields": { "label": "Italy" } },
+  { "model": "userprofile.country", "pk": 10, "fields": { "label": "Spain" } },
+  { "model": "userprofile.country", "pk": 11, "fields": { "label": "Russia" } },
+  { "model": "userprofile.country", "pk": 12, "fields": { "label": "China" } },
+  { "model": "userprofile.country", "pk": 13, "fields": { "label": "Japan" } },
+  { "model": "userprofile.country", "pk": 14, "fields": { "label": "India" } },
+  { "model": "userprofile.country", "pk": 15, "fields": { "label": "Australia" } },
+  { "model": "userprofile.country", "pk": 16, "fields": { "label": "South Africa" } },
+  { "model": "userprofile.country", "pk": 17, "fields": { "label": "Nigeria" } },
+  { "model": "userprofile.country", "pk": 18, "fields": { "label": "Egypt" } },
+  { "model": "userprofile.country", "pk": 19, "fields": { "label": "Saudi Arabia" } },
+  { "model": "userprofile.country", "pk": 20, "fields": { "label": "Turkey" } }
+]
