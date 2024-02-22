@@ -1,0 +1,11 @@
+[
+  { "model": "userprofile.interest", "pk": 1, "fields": { "label": "Cricket" } },
+  { "model": "userprofile.interest", "pk": 2, "fields": { "label": "Football" } },
+  { "model": "userprofile.interest", "pk": 3, "fields": { "label": "Cooking" } },
+  { "model": "userprofile.interest", "pk": 4, "fields": { "label": "Reading" } },
+  {
+    "model": "userprofile.interest",
+    "pk": 5,
+    "fields": { "label": "Machine Learning" }
+  }
+]

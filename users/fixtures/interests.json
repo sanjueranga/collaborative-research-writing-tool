@@ -1,0 +1,11 @@
+[
+  { "model": "users.interest", "pk": 1, "fields": { "label": "Cricket" } },
+  { "model": "users.interest", "pk": 2, "fields": { "label": "Football" } },
+  { "model": "users.interest", "pk": 3, "fields": { "label": "Cooking" } },
+  { "model": "users.interest", "pk": 4, "fields": { "label": "Reading" } },
+  {
+    "model": "users.interest",
+    "pk": 5,
+    "fields": { "label": "Machine Learning" }
+  }
+]

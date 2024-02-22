@@ -10,79 +10,184 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('userprofile', '0001_initial'),
+        ("userprofile", "0001_initial"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Article',
+            name="Article",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_date', models.DateTimeField(auto_now_add=True)),
-                ('published_date', models.DateTimeField(blank=True, null=True)),
-                ('title', models.CharField(max_length=100)),
-                ('thumbnail', models.URLField()),
-                ('content', models.TextField()),
-                ('summary', models.CharField(blank=True, max_length=250, null=True)),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='userprofile.interest')),
-                ('current_reviewer', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='articles_reviewing', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("created_date", models.DateTimeField(auto_now_add=True)),
+                ("published_date", models.DateTimeField(blank=True, null=True)),
+                ("title", models.CharField(max_length=100)),
+                ("thumbnail", models.URLField()),
+                ("content", models.TextField()),
+                ("summary", models.CharField(blank=True, max_length=250, null=True)),
+                (
+                    "category",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.PROTECT,
+                        to="userprofile.interest",
+                    ),
+                ),
+                (
+                    "current_reviewer",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.PROTECT,
+                        related_name="articles_reviewing",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='ArticleStatus',
+            name="ArticleStatus",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('label', models.CharField(max_length=100, unique=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("label", models.CharField(max_length=100, unique=True)),
             ],
         ),
         migrations.CreateModel(
-            name='ReviewRequest',
+            name="ReviewRequest",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('declined_reason', models.CharField(blank=True, max_length=500, null=True)),
-                ('article', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='articles.article')),
-                ('reviewer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='review_request', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "declined_reason",
+                    models.CharField(blank=True, max_length=500, null=True),
+                ),
+                (
+                    "article",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="articles.article",
+                    ),
+                ),
+                (
+                    "reviewer",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="review_request",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='ReviewRequestStatus',
+            name="ReviewRequestStatus",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('label', models.CharField(max_length=100, unique=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("label", models.CharField(max_length=100, unique=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Suggestion',
+            name="Suggestion",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=100)),
-                ('content', models.TextField(blank=True, null=True)),
-                ('review_request', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='articles.reviewrequest')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=100)),
+                ("content", models.TextField(blank=True, null=True)),
+                (
+                    "review_request",
+                    models.OneToOneField(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="articles.reviewrequest",
+                    ),
+                ),
             ],
         ),
         migrations.AddField(
-            model_name='reviewrequest',
-            name='status',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='articles.reviewrequeststatus'),
+            model_name="reviewrequest",
+            name="status",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.PROTECT,
+                to="articles.reviewrequeststatus",
+            ),
         ),
         migrations.CreateModel(
-            name='ArticleComment',
+            name="ArticleComment",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('content', models.CharField(max_length=500)),
-                ('article', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='articles.article')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comments', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("content", models.CharField(max_length=500)),
+                (
+                    "article",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="articles.article",
+                    ),
+                ),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="comments",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
         migrations.AddField(
-            model_name='article',
-            name='status',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='articles.articlestatus'),
+            model_name="article",
+            name="status",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.PROTECT, to="articles.articlestatus"
+            ),
         ),
         migrations.AddField(
-            model_name='article',
-            name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='articles', to=settings.AUTH_USER_MODEL),
+            model_name="article",
+            name="user",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="articles",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
     ]

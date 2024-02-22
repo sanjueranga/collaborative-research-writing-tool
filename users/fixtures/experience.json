@@ -1,0 +1,6 @@
+[
+  { "model": "users.experience", "pk": 1, "fields": { "label": "1 year" } },
+  { "model": "users.experience", "pk": 2, "fields": { "label": "2 year" } },
+  { "model": "users.experience", "pk": 3, "fields": { "label": "3 year" } },
+  { "model": "users.experience", "pk": 4, "fields": { "label": "5+  years" } }
+]

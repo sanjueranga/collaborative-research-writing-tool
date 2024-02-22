@@ -1,0 +1,27 @@
+[
+  {
+    "model": "articles.articlestatus",
+    "pk": 1,
+    "fields": { "label": "Draft" }
+  },
+  {
+    "model": "articles.articlestatus",
+    "pk": 2,
+    "fields": { "label": "Under Review" }
+  },
+  {
+    "model": "articles.articlestatus",
+    "pk": 3,
+    "fields": { "label": "Review Inprogress" }
+  },
+  {
+    "model": "articles.articlestatus",
+    "pk": 4,
+    "fields": { "label": "Accepted" }
+  },
+  {
+    "model": "articles.articlestatus",
+    "pk": 5,
+    "fields": { "label": "Published" }
+  }
+]
